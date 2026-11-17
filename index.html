@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sol &amp; Luz SC — Energia Solar Residencial e Comercial | Palhoça</title>
+  <meta name="description" content="Instalação de energia solar residencial e comercial em Palhoça e região. Projeto sob medida, equipe especializada e economia na conta de luz. Orçamento pelo WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#1a1f2e',
+            navy: '#0f1729',
+            dusk: '#2a3144',
+            gold: '#e8a317',
+            amber: '#f5b942',
+            sand: '#fef6e8',
+            cream: '#faf8f5'
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+            sans: ['Figtree', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            solar: '0 0 40px rgba(232,163,23,.28)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Figtree, system-ui, sans-serif; }
+    .font-display { font-family: "Bricolage Grotesque", system-ui, sans-serif; }
+    .glass {
+      background: rgba(15, 23, 41, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .hero-bg {
+      background:
+        linear-gradient(115deg, rgba(15,23,41,.92) 0%, rgba(26,31,46,.58) 42%, rgba(15,23,41,.82) 100%),
+        url('images/hero-solar-technician.jpg') center/cover no-repeat;
+    }
+    .mesh {
+      background:
+        radial-gradient(ellipse 75% 55% at 8% 15%, rgba(232,163,23,.12), transparent 50%),
+        radial-gradient(ellipse 55% 45% at 92% 8%, rgba(245,185,66,.1), transparent 45%),
+        linear-gradient(180deg, #faf8f5 0%, #fef6e8 48%, #faf8f5 100%);
+    }
+    .service-card {
+      transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(15,23,41,.14);
+      border-color: rgba(232,163,23,.5);
+    }
+    .gallery-item img {
+      transition: transform .7s cubic-bezier(.22,1,.36,1);
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .float-wa {
+      animation: bob 3.2s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .pulse-dot {
+      box-shadow: 0 0 0 0 rgba(245,185,66,.55);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      70% { box-shadow: 0 0 0 10px rgba(245,185,66,0); }
+      100% { box-shadow: 0 0 0 0 rgba(245,185,66,0); }
+    }
+    #lightbox { opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+    #lightbox.open { opacity: 1; pointer-events: auto; }
+    .estimator-option.selected {
+      border-color: #e8a317;
+      background: rgba(232,163,23,.12);
+      box-shadow: 0 0 0 1px #e8a317;
+    }
+    .mode-tab.selected {
+      background: #e8a317;
+      color: #0f1729;
+    }
+  </style>
+</head>
+<body class="bg-cream text-charcoal antialiased">
+
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="glass border-b border-white/10">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 h-[4.25rem] flex items-center justify-between gap-3">
+        <a href="#topo" class="font-display font-extrabold text-lg tracking-tight text-white">
+          Sol &amp; <span class="text-amber">Luz SC</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-7 text-sm text-white/80">
+          <a href="#servicos" class="hover:text-amber transition">Serviços</a>
+          <a href="#galeria" class="hover:text-amber transition">Galeria</a>
+          <a href="#porque" class="hover:text-amber transition">Por que nós</a>
+          <a href="#estimativa" class="hover:text-amber transition">Estimativa</a>
+          <a href="#contato" class="hover:text-amber transition">Contato</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <span class="hidden sm:inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3 py-1.5 text-[11px] font-semibold text-white/95">
+            <span class="h-2 w-2 rounded-full bg-amber pulse-dot"></span>
+            Visitas técnicas nesta semana
+          </span>
+          <a href="https://wa.me/5548988403311?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Sol%20%26%20Luz%20SC%20sobre%20energia%20solar"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center rounded-full bg-gold px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-bold text-navy hover:brightness-110 transition shadow-solar">
+            Orçar no WhatsApp
+          </a>
+          <button id="menuBtn" class="md:hidden text-white p-2" aria-label="Abrir menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 px-4 pb-4">
+        <div class="flex flex-col gap-3 pt-3 text-sm text-white/85">
+          <a href="#servicos" class="py-1">Serviços</a>
+          <a href="#galeria" class="py-1">Galeria</a>
+          <a href="#porque" class="py-1">Por que nós</a>
+          <a href="#estimativa" class="py-1">Estimativa</a>
+          <a href="#contato" class="py-1">Contato</a>
+          <span class="inline-flex items-center gap-2 text-[11px] font-semibold text-amber pt-1">
+            <span class="h-2 w-2 rounded-full bg-amber"></span> Visitas técnicas nesta semana
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="hero-bg relative min-h-[100svh] flex items-end sm:items-center">
+      <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/35"></div>
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6 w-full pt-28 pb-16 sm:py-32">
+        <p class="font-display text-amber text-sm sm:text-base font-bold tracking-[0.18em] uppercase mb-4 reveal">Palhoça · Pedra Branca</p>
+        <h1 class="font-display text-white font-extrabold text-[clamp(2.2rem,7vw,4.6rem)] leading-[1.02] tracking-tight max-w-[14ch] mb-5 reveal" style="transition-delay:.08s">
+          Sua conta de luz sob controle
+        </h1>
+        <p class="text-white/82 text-base sm:text-lg max-w-lg mb-8 reveal" style="transition-delay:.16s">
+          Energia solar com projeto sob medida — instalação residencial e comercial com equipe especializada em Palhoça e Grande Florianópolis.
+        </p>
+        <div class="flex flex-wrap gap-3 reveal" style="transition-delay:.24s">
+          <a href="https://wa.me/5548988403311?text=Ol%C3%A1%2C%20quero%20um%20projeto%20de%20energia%20solar"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-bold text-navy hover:brightness-110 transition">
+            Pedir projeto pelo WhatsApp
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="#estimativa"
+             class="inline-flex items-center rounded-full border border-white/35 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/12 transition">
+            Simular economia agora
+          </a>
+        </div>
+        <p class="mt-10 text-white/50 text-xs sm:text-sm reveal" style="transition-delay:.32s">Técnico em EPI instalando placas fotovoltaicas no telhado · energia limpa e previsível.</p>
+      </div>
+    </section>
+
+    <section id="servicos" class="mesh py-20 sm:py-28">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="max-w-xl mb-12 reveal">
+          <p class="text-gold font-bold text-sm tracking-widest uppercase mb-2">Serviços</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-navy">Soluções completas em fotovoltaica</h2>
+          <p class="mt-3 text-dusk/75">Do dimensionamento à homologação — um único parceiro para gerar sua própria energia.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <article class="service-card reveal rounded-2xl border border-dusk/12 bg-white/85 p-6 sm:p-7">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-navy text-amber flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2">Projeto residencial</h3>
+            <p class="text-dusk/65 text-sm leading-relaxed">Dimensionamento por consumo, layout no telhado e equipamentos certificados para casas e sobrados.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-dusk/12 bg-white/85 p-6 sm:p-7" style="transition-delay:.08s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-navy text-amber flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2">Energia para empresas</h3>
+            <p class="text-dusk/65 text-sm leading-relaxed">Sistemas comerciais e industriais com foco em payback, demanda e integração com a concessionária.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-dusk/12 bg-white/85 p-6 sm:p-7" style="transition-delay:.16s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-navy text-amber flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2">Instalação e homologação</h3>
+            <p class="text-dusk/65 text-sm leading-relaxed">Montagem em telhado com equipe treinada, ART, documentação e acompanhamento até a energia injetar na rede.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-dusk/12 bg-white/85 p-6 sm:p-7" style="transition-delay:.08s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-navy text-amber flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2">Ampliação e retrofit</h3>
+            <p class="text-dusk/65 text-sm leading-relaxed">Já tem solar e precisa de mais kWp? Avaliamos inversor, string e espaço no telhado para crescer com segurança.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-dusk/12 bg-white/85 p-6 sm:p-7" style="transition-delay:.16s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-navy text-amber flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2">Monitoramento</h3>
+            <p class="text-dusk/65 text-sm leading-relaxed">Acompanhe geração pelo app, receba alertas e mantenha a performance do sistema ao longo dos anos.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-dusk/12 bg-white/85 p-6 sm:p-7" style="transition-delay:.24s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-navy text-amber flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2">Manutenção preventiva</h3>
+            <p class="text-dusk/65 text-sm leading-relaxed">Inspeção de fixação, conectores e limpeza técnica das placas para máxima geração em dias de sol pleno.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="bg-navy py-20 sm:py-28">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 reveal">
+          <div>
+            <p class="text-amber font-bold text-sm tracking-widest uppercase mb-2">Galeria</p>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Instalações reais no telhado</h2>
+          </div>
+          <p class="text-white/55 text-sm max-w-xs">Fotos de técnicos e equipes instalando placas fotovoltaicas. Clique para ampliar.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-auto md:row-span-2 md:min-h-[420px]" data-full="images/hero-solar-technician.jpg">
+            <img src="images/hero-solar-technician.jpg" alt="Técnico em segurança instalando placa solar no telhado" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-navy/75 via-transparent to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Instalação residencial</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-square" style="transition-delay:.06s" data-full="images/gallery-rooftop-install.jpg">
+            <img src="images/gallery-rooftop-install.jpg" alt="Técnico instalando painéis solares em telhado residencial" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-navy/65 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Montagem em telhado</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-square" style="transition-delay:.12s" data-full="images/gallery-technician-cables.jpg">
+            <img src="images/gallery-technician-cables.jpg" alt="Técnico conectando cabos em instalação fotovoltaica" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-navy/65 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Cabos e inversor</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-square" style="transition-delay:.06s" data-full="images/gallery-worker-panel.jpg">
+            <img src="images/gallery-worker-panel.jpg" alt="Profissional fixando painel solar no telhado" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-navy/65 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Fixação de módulo</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-square" style="transition-delay:.12s" data-full="images/gallery-team-roof.jpg">
+            <img src="images/gallery-team-roof.jpg" alt="Equipe instalando painéis solares em telhado amplo" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-navy/65 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Equipe em campo</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-[16/10] md:col-span-2" style="transition-delay:.18s" data-full="images/trust-roof-panels.jpg">
+            <img src="images/trust-roof-panels.jpg" alt="Close de painéis solares instalados em telhado com céu azul" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Placas gerando energia</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="porque" class="py-20 sm:py-28 bg-cream">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="reveal">
+            <p class="text-gold font-bold text-sm tracking-widest uppercase mb-2">Por que Sol &amp; Luz SC</p>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-navy mb-5">Tecnologia solar com quem conhece a região</h2>
+            <p class="text-dusk/75 mb-8 max-w-md">Atendemos Pedra Branca, Palhoça e vizinhança com projeto sob medida — sem pacote genérico que não fecha com o seu telhado ou a sua fatura.</p>
+            <div class="space-y-5">
+              <div class="flex gap-4">
+                <div class="mt-1 h-10 w-10 shrink-0 rounded-full bg-sand flex items-center justify-center text-gold font-display font-bold">01</div>
+                <div>
+                  <h3 class="font-bold text-navy">Dimensionamento transparente</h3>
+                  <p class="text-sm text-dusk/65 mt-1">Analisamos consumo, orientação do telhado e sombreamento antes de indicar potência e equipamentos.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="mt-1 h-10 w-10 shrink-0 rounded-full bg-sand flex items-center justify-center text-gold font-display font-bold">02</div>
+                <div>
+                  <h3 class="font-bold text-navy">Equipe própria em altura</h3>
+                  <p class="text-sm text-dusk/65 mt-1">Técnicos com EPI e experiência em instalação fotovoltaica — o mesmo padrão que você vê na galeria.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="mt-1 h-10 w-10 shrink-0 rounded-full bg-sand flex items-center justify-center text-gold font-display font-bold">03</div>
+                <div>
+                  <h3 class="font-bold text-navy">Pós-venda de verdade</h3>
+                  <p class="text-sm text-dusk/65 mt-1">Acompanhamento pós-ligação, suporte para homologação e orientação sobre monitoramento.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal relative" style="transition-delay:.12s">
+            <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-gold/25 via-transparent to-amber/20 blur-2xl"></div>
+            <img src="images/trust-roof-panels.jpg"
+                 alt="Painéis solares fotovoltaicos em telhado residencial sob céu claro"
+                 class="relative rounded-[1.5rem] w-full h-[420px] object-cover shadow-2xl" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="estimativa" class="py-20 sm:py-28 bg-charcoal text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-30 pointer-events-none"
+           style="background: radial-gradient(circle at 85% 15%, rgba(232,163,23,.4), transparent 42%), radial-gradient(circle at 12% 85%, rgba(245,185,66,.2), transparent 38%);"></div>
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="max-w-xl mb-10 reveal">
+          <p class="text-amber font-bold text-sm tracking-widest uppercase mb-2">Estimativa rápida</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight">Quanto de solar você precisa?</h2>
+          <p class="mt-3 text-white/65">Simule por potência desejada (kWp) ou pela faixa da sua conta de luz. Resultado orientativo — confirme com visita técnica.</p>
+        </div>
+
+        <div class="reveal flex gap-2 mb-6 p-1 rounded-xl bg-white/5 border border-white/10 w-fit">
+          <button type="button" id="modeKwp" class="mode-tab selected rounded-lg px-4 py-2 text-sm font-semibold transition">Por potência (kWp)</button>
+          <button type="button" id="modeConta" class="mode-tab rounded-lg px-4 py-2 text-sm font-semibold text-white/70 hover:text-white transition">Por conta de luz</button>
+        </div>
+
+        <div class="reveal grid lg:grid-cols-[1.2fr_.8fr] gap-6 lg:gap-8">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-sm">
+            <p class="text-sm font-semibold text-white/80 mb-3">Tipo de imóvel</p>
+            <div class="grid sm:grid-cols-3 gap-3 mb-8" id="tipoGroup">
+              <button type="button" data-tipo="residencial" data-fator="1" class="estimator-option selected rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                Residencial
+              </button>
+              <button type="button" data-tipo="comercial" data-fator="1.35" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                Comercial
+              </button>
+              <button type="button" data-tipo="industrial" data-fator="1.55" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                Industrial / galpão
+              </button>
+            </div>
+
+            <div id="panelKwp">
+              <p class="text-sm font-semibold text-white/80 mb-3">Potência do sistema</p>
+              <div class="grid sm:grid-cols-3 gap-3 mb-6" id="kwpGroup">
+                <button type="button" data-kwp="4" class="estimator-option selected rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                  3 – 5 kWp
+                </button>
+                <button type="button" data-kwp="8" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                  6 – 10 kWp
+                </button>
+                <button type="button" data-kwp="15" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                  12+ kWp
+                </button>
+              </div>
+            </div>
+
+            <div id="panelConta" class="hidden">
+              <p class="text-sm font-semibold text-white/80 mb-3">Valor médio da conta (R$)</p>
+              <div class="grid sm:grid-cols-3 gap-3 mb-6" id="contaGroup">
+                <button type="button" data-conta="350" data-kwp-est="4" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                  R$ 250 – 450
+                </button>
+                <button type="button" data-conta="650" data-kwp-est="8" class="estimator-option selected rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                  R$ 450 – 900
+                </button>
+                <button type="button" data-conta="1200" data-kwp-est="15" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                  Acima de R$ 900
+                </button>
+              </div>
+            </div>
+
+            <label class="flex items-center gap-3 text-sm text-white/75 cursor-pointer select-none">
+              <input id="estruturaCheck" type="checkbox" class="h-4 w-4 rounded accent-amber" />
+              Telhado exige estrutura reforçada (+ 8% no investimento)
+            </label>
+          </div>
+
+          <div class="rounded-3xl bg-gold text-navy p-6 sm:p-8 flex flex-col justify-between shadow-solar">
+            <div>
+              <p class="text-sm font-semibold opacity-70 mb-1">Potência sugerida</p>
+              <p id="kwpEstimado" class="font-display text-5xl font-extrabold tracking-tight">4 kWp</p>
+              <p id="economiaEstimada" class="mt-2 text-lg font-semibold opacity-85">Economia anual aproximada: R$ 3.600</p>
+              <p id="investimentoEstimado" class="mt-4 text-sm opacity-75 leading-relaxed">Investimento indicativo a partir de <strong class="font-bold">R$ 18.000</strong> (instalação completa).</p>
+              <p class="mt-2 text-xs opacity-60">Base: ~R$ 4.500/kWp × fator do imóvel · região Sul/SC · valores não vinculativos.</p>
+            </div>
+            <a id="waEstimativa"
+               href="https://wa.me/5548988403311?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Sol%20%26%20Luz%20SC%20e%20quero%20uma%20proposta%20de%20energia%20solar"
+               target="_blank" rel="noopener"
+               class="mt-8 inline-flex items-center justify-center rounded-full bg-navy px-6 py-3.5 text-sm font-bold text-white hover:bg-navy/90 transition">
+              Receber proposta no WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="py-20 sm:py-28 mesh">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-10">
+          <div class="reveal">
+            <p class="text-gold font-bold text-sm tracking-widest uppercase mb-2">Contato</p>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-navy mb-4">Visita técnica em Palhoça</h2>
+            <p class="text-dusk/75 max-w-md mb-8">Conte sua conta de luz e o tipo de telhado. A Sol &amp; Luz SC elabora o projeto e agenda instalação com equipe fotovoltaica.</p>
+            <a href="tel:+5548988403311" class="inline-flex items-center gap-2 font-display text-2xl font-bold text-navy hover:text-gold transition">
+              (48) 98840-3311
+            </a>
+          </div>
+
+          <div class="reveal rounded-3xl border border-dusk/12 bg-white/90 p-6 sm:p-8 shadow-lg shadow-navy/5" style="transition-delay:.1s">
+            <dl class="space-y-5 text-sm">
+              <div>
+                <dt class="font-semibold text-dusk/50 uppercase tracking-wider text-[11px] mb-1">Empresa</dt>
+                <dd class="text-navy font-medium">Sol &amp; Luz SC — Instalação de energia solar residencial e comercial</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-dusk/50 uppercase tracking-wider text-[11px] mb-1">Endereço</dt>
+                <dd class="text-navy font-medium">Rua João Pereira dos Santos, 410 — Pedra Branca<br />Palhoça — SC, 88137-090</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-dusk/50 uppercase tracking-wider text-[11px] mb-1">Horário</dt>
+                <dd class="text-navy font-medium">Seg–Sex: 08:00 – 18:00<br />Sáb: 08:00 – 12:00</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-dusk/50 uppercase tracking-wider text-[11px] mb-1">WhatsApp</dt>
+                <dd>
+                  <a href="https://wa.me/5548988403311" target="_blank" rel="noopener" class="text-gold font-bold hover:underline">(48) 98840-3311</a>
+                </dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-dusk/50 uppercase tracking-wider text-[11px] mb-1">Área de atuação</dt>
+                <dd class="text-navy font-medium">Palhoça (Pedra Branca) · São José · Florianópolis e região</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-navy text-white/50 py-10">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm">
+      <p class="font-display font-bold text-white">Sol &amp; <span class="text-amber">Luz SC</span> <span class="font-sans font-normal text-white/40 ml-2">Energia solar</span></p>
+      <p>© <span id="year"></span> Sol &amp; Luz SC · Palhoça/SC · Energia fotovoltaica</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5548988403311?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20energia%20solar%20com%20a%20Sol%20%26%20Luz%20SC"
+     target="_blank" rel="noopener"
+     class="float-wa fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl hover:scale-105 transition"
+     aria-label="WhatsApp">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <div id="lightbox" class="fixed inset-0 z-[60] bg-navy/92 flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <button id="lightboxClose" class="absolute top-4 right-4 text-white/80 hover:text-white text-3xl leading-none" aria-label="Fechar">&times;</button>
+    <img id="lightboxImg" src="" alt="Ampliação da galeria de instalação solar" class="max-h-[88vh] max-w-full rounded-xl object-contain shadow-2xl" />
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.hero-bg .reveal').forEach(el => el.classList.add('in'));
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    document.querySelectorAll('.gallery-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        lightboxImg.src = btn.dataset.full;
+        lightbox.classList.add('open');
+      });
+    });
+    document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
+
+    const PRICE_PER_KWP = 4500;
+    const KWH_PER_KWP_YEAR = 1300;
+    const TARIFF = 0.72;
+    let modo = 'kwp';
+    let kwp = 4;
+    let fator = 1;
+    let estruturaExtra = false;
+
+    const kwpEl = document.getElementById('kwpEstimado');
+    const economiaEl = document.getElementById('economiaEstimada');
+    const investEl = document.getElementById('investimentoEstimado');
+    const waEst = document.getElementById('waEstimativa');
+    const estruturaCheck = document.getElementById('estruturaCheck');
+    const panelKwp = document.getElementById('panelKwp');
+    const panelConta = document.getElementById('panelConta');
+    const modeKwp = document.getElementById('modeKwp');
+    const modeConta = document.getElementById('modeConta');
+
+    function formatBRL(n) {
+      return n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+    }
+
+    function getTipoLabel() {
+      return document.querySelector('#tipoGroup .selected')?.dataset.tipo || 'residencial';
+    }
+
+    function updateEstimate() {
+      const geracaoAnual = kwp * KWH_PER_KWP_YEAR;
+      const economia = Math.round(geracaoAnual * TARIFF * 0.92);
+      let invest = Math.round(kwp * PRICE_PER_KWP * fator);
+      if (estruturaExtra) invest = Math.round(invest * 1.08);
+
+      kwpEl.textContent = kwp + ' kWp';
+      economiaEl.textContent = 'Economia anual aproximada: ' + formatBRL(economia);
+      investEl.innerHTML = 'Investimento indicativo a partir de <strong class="font-bold">' + formatBRL(invest) + '</strong> (instalação completa).';
+
+      const modoTxt = modo === 'kwp' ? 'simulação por kWp' : 'simulação por conta de luz';
+      const msg = encodeURIComponent(
+        `Olá, vim pelo site da Sol & Luz SC. Quero proposta de energia solar: imóvel ${getTipoLabel()}, ~${kwp} kWp, ${modoTxt}, estrutura reforçada ${estruturaExtra ? 'sim' : 'não'}. Investimento estimado ${formatBRL(invest)}.`
+      );
+      waEst.href = 'https://wa.me/5548988403311?text=' + msg;
+    }
+
+    function bindGroup(groupId, onPick) {
+      const group = document.getElementById(groupId);
+      group.querySelectorAll('.estimator-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+          group.querySelectorAll('.estimator-option').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          onPick(btn);
+          updateEstimate();
+        });
+      });
+    }
+
+    bindGroup('tipoGroup', (btn) => { fator = Number(btn.dataset.fator); });
+    bindGroup('kwpGroup', (btn) => { kwp = Number(btn.dataset.kwp); });
+    bindGroup('contaGroup', (btn) => { kwp = Number(btn.dataset.kwpEst); });
+
+    estruturaCheck.addEventListener('change', () => {
+      estruturaExtra = estruturaCheck.checked;
+      updateEstimate();
+    });
+
+    modeKwp.addEventListener('click', () => {
+      modo = 'kwp';
+      modeKwp.classList.add('selected');
+      modeConta.classList.remove('selected');
+      panelKwp.classList.remove('hidden');
+      panelConta.classList.add('hidden');
+      const sel = document.querySelector('#kwpGroup .selected');
+      kwp = sel ? Number(sel.dataset.kwp) : 4;
+      updateEstimate();
+    });
+
+    modeConta.addEventListener('click', () => {
+      modo = 'conta';
+      modeConta.classList.add('selected');
+      modeKwp.classList.remove('selected');
+      panelConta.classList.remove('hidden');
+      panelKwp.classList.add('hidden');
+      const sel = document.querySelector('#contaGroup .selected');
+      kwp = sel ? Number(sel.dataset.kwpEst) : 8;
+      updateEstimate();
+    });
+
+    updateEstimate();
+  </script>
+</body>
+</html>
